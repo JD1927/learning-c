@@ -20,6 +20,6 @@ int main(int argc, char *argv[])
   for (unsigned int i = 1; i <= count; i++) {
     sum += i;
   }
-  printf("\nTotal of the first %u numbers is %lu\n", count, sum);
+  printf("\nTotal of the first %u numbers is %llu\n", count, sum);
   return 0;
 }

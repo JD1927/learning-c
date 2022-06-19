@@ -11,18 +11,18 @@
 int main(int argc, char *argv[])
 {
   // Variables
-  double width = 0.0;
-  double height = 0.0;
-  double area = 0.0;
-  double perimeter = 0.0;
+  double width = 0;
+  double height = 0;
+  double area = 0;
+  double perimeter = 0;
 
-  double widthArg = 0.0, heightArg = 0.0;
-  // Convert args to doubles
-  widthArg = atof(argv[1]);
-  heightArg = atof(argv[2]);
+  double widthArg = 0, heightArg = 0;
 
   if (widthArg > 0 && heightArg > 0)
   {
+    // Convert args to doubles
+    widthArg = atof(argv[1]);
+    heightArg = atof(argv[2]);
     width = widthArg;
     height = heightArg;
   }
