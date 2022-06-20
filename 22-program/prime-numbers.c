@@ -10,8 +10,8 @@
 
 int main(int argc, char *argv[])
 {
-  int array[NUMBERS];
-  int primeNumbers[NUMBERS];
+  int array[NUMBERS] = {0};
+  int primeNumbers[NUMBERS] = {0};
   // Seed array
   for (int i = 0; i < NUMBERS; i++) {
     array[i] = i + 1;
