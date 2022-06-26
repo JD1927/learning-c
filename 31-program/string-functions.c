@@ -53,8 +53,8 @@ void reverseStringOrder(char str[]) {
 }
 
 void sortStrings(char strings[][50], int numberOfStrings) {
-  for (int i = 0; i < numberOfStrings; i++) {
-    for (int j = 0; j < numberOfStrings - i; j++) {
+  for (int i = 0; i < numberOfStrings - 1; i++) {
+    for (int j = 0; j < numberOfStrings - i - 1; j++) {
       if (strcmp(strings[j], strings[j+1]) > 0) {
         char temp[50];
         strcpy(temp, strings[j]);
