@@ -19,10 +19,8 @@ int main(int argc, char *argv[]) {
 }
 
 int getStringLength(const char *str) {
-  int counter = 0;
-  while (*str) {
+  const char *firstAddress = str;
+  while (*str)
     ++str;
-    ++counter;
-  }
-  return counter;
+  return str - firstAddress;
 }
