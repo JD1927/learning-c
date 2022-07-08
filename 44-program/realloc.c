@@ -19,7 +19,7 @@ int main(int argc, char *argv[]) {
   printf("String = %s, Address = %p\n", str, str);
 
   // Reallocating memory
-  str = str = (char *) realloc(str, 25 * sizeof(char));
+  str = (char *) realloc(str, 25 * sizeof(char));
   strcat(str, ".com");
   printf("String = %s, Address = %p\n", str, str);
 
