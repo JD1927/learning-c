@@ -17,9 +17,9 @@ int main(int argc, char *argv[])
   float minutesArg = 0;
 
   // Validate input
-  minutesArg = atof(argv[1]);
   if (minutesArg > 0)
   {
+    minutesArg = atof(argv[1]);
     minutes = minutesArg;
   }
   else
