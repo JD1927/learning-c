@@ -9,37 +9,51 @@
 #include <string.h>
 #include <ctype.h>
 #include <stddef.h>
+#define ITEM_NAME_LEN 20
 
-struct employee {
-  char name[50];
-  char hireDate[15];
-  float salary;
+struct item {
+  char *itemName;
+  int quantity;
+  float price;
+  float amount;
 };
 
-void printEmployeeInfo(struct employee const employee);
+
+void readItem(struct item *item);
+void printItem(struct item *item);
 
 int main(int argc, char *argv[]) {
-  struct employee employee1 = { "Juan", "20/01/2021", 50000.0f };
-  struct employee employee2;
+  struct item item, *pItem;
+  pItem = &item;
 
-  // Print employee 1
-  printEmployeeInfo(employee1);
-  // Read input
-  printf("Enter the name of the employee #2: \n");
-  scanf("%s", employee2.name);
-  printf("Enter the hire date of the employee #2 (dd/MM/YYYY): \n");
-  scanf("%s", employee2.hireDate);
-  printf("Enter the salary of the employee #2: \n");
-  scanf("%f", &employee2.salary);
+  pItem->itemName = (char *) malloc(ITEM_NAME_LEN * sizeof(char));
 
+  if (!pItem) {
+    exit(-1);
+  }
 
-  // Print employee 2
-  printEmployeeInfo(employee2);
+  readItem(pItem);
+  printItem(pItem);
+  free(pItem->itemName);
   return 0;
 }
 
-void printEmployeeInfo(struct employee employee) {
-  printf("Name: %s \n", employee.name);
-  printf("Hire date: %s \n", employee.hireDate);
-  printf("Salary: %.2f \n", employee.salary);
+void readItem(struct item *item) {
+  printf("Enter the item's name: \n");
+  scanf("%s", item->itemName);
+
+  printf("Enter the item's quantity: \n");
+  scanf("%d", &item->quantity);
+
+  printf("Enter the item's price: \n");
+  scanf("%f", &item->price);
+
+  item->amount = (float) item->quantity * item->price;
+}
+
+void printItem(struct item *item) {
+  printf("Item's name: %s\n", item->itemName);
+  printf("Item's quantity: %d\n", item->quantity);
+  printf("Item's price: %.2f\n", item->price);
+  printf("Item's amount: %.2f\n", item->amount);
 }
